@@ -1,0 +1,80 @@
+<!-- app-sales-card.component.html -->
+<div class="row row-span-3 container mb-7">
+  <article
+    class="w-96 shadow p-4 space-y-2 rounded-md hover:-translate-y-2 duration-300 flex justify-around items-center"
+  >
+    <div class="w-40">
+      <img src="{{ imgProduct }}" />
+    </div>
+    <div class="w-52">
+      <p class="text-sm w-full font-bold text-lg">{{ nameProduct }}</p>
+      <div class="flex items-center space-x-1">
+        <input
+          type="radio"
+          [id]="ratingId + '-star1'"
+          name="rating-{{ ratingId }}"
+          value="1"
+          class="hidden peer"
+        />
+        <label
+          [for]="ratingId + '-star1'"
+          class="cursor-pointer text-gray-400 peer-checked:text-green-600 peer-hover:text-green-600 transition-colors duration-100 text-3xl"
+          >&#9733;</label
+        >
+
+        <input
+          type="radio"
+          [id]="ratingId + '-star2'"
+          name="rating-{{ ratingId }}"
+          value="2"
+          class="hidden peer"
+        />
+        <label
+          [for]="ratingId + '-star2'"
+          class="cursor-pointer text-gray-400 peer-checked:text-green-600 peer-hover:text-green-600 transition-colors duration-100 text-3xl"
+          >&#9733;</label
+        >
+
+        <input
+          type="radio"
+          [id]="ratingId + '-star3'"
+          name="rating-{{ ratingId }}"
+          value="3"
+          class="hidden peer"
+        />
+        <label
+          [for]="ratingId + '-star3'"
+          class="cursor-pointer text-gray-400 peer-checked:text-green-600 peer-hover:text-green-600 transition-colors duration-100 text-3xl"
+          >&#9733;</label
+        >
+
+        <input
+          type="radio"
+          [id]="ratingId + '-star4'"
+          name="rating-{{ ratingId }}"
+          value="4"
+          class="hidden peer"
+        />
+        <label
+          [for]="ratingId + '-star4'"
+          class="cursor-pointer text-gray-400 peer-checked:text-green-600 peer-hover:text-green-600 transition-colors duration-100 text-3xl"
+          >&#9733;</label
+        >
+
+        <input
+          type="radio"
+          [id]="ratingId + '-star5'"
+          name="rating-{{ ratingId }}"
+          value="5"
+          class="hidden peer"
+        />
+        <label
+          [for]="ratingId + '-star5'"
+          class="cursor-pointer text-gray-400 peer-checked:text-green-600 peer-hover:text-green-600 transition-colors duration-100 text-3xl"
+          >&#9733;</label
+        >
+      </div>
+      <span class="font-bold text-lg"> £{{ priceProduct }} </span>
+    </div>
+  </article>
+</div>

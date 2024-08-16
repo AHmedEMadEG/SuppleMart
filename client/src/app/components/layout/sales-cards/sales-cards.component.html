@@ -1,0 +1,61 @@
+<!-- parent.component.html -->
+<div class="flex justify-evenly w-auto mt-10">
+  <section>
+    <p class="font-bold text-4xl mb-5">Best Selling</p>
+    <app-sales-card
+      [imgProduct]="'Intelligent_Wool_Bottle.png'"
+      [nameProduct]="'Intelligent Wool Bottle'"
+      [priceProduct]="7.49"
+      [ratingId]="'card1'"
+    ></app-sales-card>
+    <app-sales-card
+      [imgProduct]="'2-800x747.png'"
+      [nameProduct]="'Enormous Wooden Pants'"
+      [priceProduct]="767.13"
+      [ratingId]="'card2'"
+    ></app-sales-card>
+    <app-sales-card
+      [imgProduct]="'3.png'"
+      [nameProduct]="'Sleek Wool Bench'"
+      [priceProduct]="269.37"
+      [ratingId]="'card3'"
+    ></app-sales-card>
+    <app-sales-card
+      [imgProduct]="'4-400x373.png'"
+      [nameProduct]="'Aerodynamic silk Shirt'"
+      [priceProduct]="486.12"
+      [ratingId]="'card4'"
+    ></app-sales-card>
+  </section>
+  <section>
+    <p class="font-bold text-4xl mb-5">Latest Deals</p>
+    <app-big-card></app-big-card>
+  </section>
+  <section>
+    <p class="font-bold text-4xl mb-5">Recommended</p>
+    <app-sales-card
+      [imgProduct]="'4-400x373.png'"
+      [nameProduct]="'Aerodynamic silk Shirt'"
+      [priceProduct]="486.12"
+      [ratingId]="'card5'"
+    ></app-sales-card>
+    <app-sales-card
+      [imgProduct]="'38-400x373.png'"
+      [nameProduct]="'Awesome Marble Plate'"
+      [priceProduct]="259.95"
+      [ratingId]="'card6'"
+    ></app-sales-card>
+    <app-sales-card
+      [imgProduct]="'5-400x373.png'"
+      [nameProduct]="'Small Silk Bottle'"
+      [priceProduct]="249.78"
+      [ratingId]="'card7'"
+    ></app-sales-card>
+    <app-sales-card
+      [imgProduct]="'15-800x747.png'"
+      [nameProduct]="'Intelligent Rubber Computer '"
+      [priceProduct]="882.76"
+      [ratingId]="'card8'"
+    ></app-sales-card>
+  </section>
+</div>
