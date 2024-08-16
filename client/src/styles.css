@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary-color: #f2cb1f;
+  --secondary-color: #1c2127;
+  --secondary-text: #999999;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: white;
+  background: var(--primary-color);
+}
+
+body {
+  background-color: whitesmoke;
+}

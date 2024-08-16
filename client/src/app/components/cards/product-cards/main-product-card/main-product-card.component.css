@@ -1,0 +1,14 @@
+.more:hover + .shopping-content {
+  width: 100%;
+  visibility: visible;
+}
+
+.shopping-content:hover.shopping-content {
+  width: 100%;
+  visibility: visible;
+}
+
+.shopping-content {
+  width: 0px;
+  visibility: invisible;
+}

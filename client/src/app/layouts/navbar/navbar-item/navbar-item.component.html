@@ -1,0 +1,30 @@
+<span *ngIf="label">
+  <!-- Render the logo if the label is 'LOGO' -->
+  @if(label === "LOGO"){
+  <img
+    src="./logo-1.svg"
+    alt="logo"
+    width="140px"
+    height="60px"
+    class="block h-full border-[#d9b61c] font-bold cursor-pointer hover:text-white py-[1.3rem] pe-[1.3rem]"
+  />
+  }
+
+  <!-- Render the label if it's not 'LOGO' -->
+  <span
+    *ngIf="label !== 'LOGO'"
+    [ngClass]="{ 'border-l-[1px]': first }"
+    class="border-r-[1px] border-[#d9b61c] font-bold cursor-pointer hover:text-white p-[1.3rem]"
+  >
+    {{ label }}
+  </span>
+</span>
+
+<!-- Render the SVG icon if it's provided -->
+<span
+  *ngIf="svgIcon"
+  [ngClass]="{ 'border-l-[1px]': first }"
+  class="block border-r-[1px] border-[#d9b61c] font-extrabold cursor-pointer hover:text-white p-[1.3rem]"
+  [innerHTML]="safeSvgIcon"
+>
+</span>
