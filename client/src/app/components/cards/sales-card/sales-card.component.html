@@ -1,13 +1,13 @@
 <!-- app-sales-card.component.html -->
-<div class="row row-span-3 container mb-7">
+<div class="mb-5 w-96 ">
   <article
-    class="w-96 shadow p-4 space-y-2 rounded-md flex justify-around items-center"
+    class="bg-white w-[420px] h-36 shadow space-y-2 flex justify-start items-center rounded-br-3xl py-5"
   >
-    <div class="w-40">
+    <div class="w-32 h-40 p-1 flex items-center ">
       <img src="{{ imgProduct }}" />
     </div>
-    <div class="w-52">
-      <p class="text-sm w-full font-bold ">{{ nameProduct }}</p>
+    <div>
+      <p class="text-sm ssw-full font-bold">{{ nameProduct }}</p>
       <div class="flex items-center space-x-1">
         <input
           type="radio"
@@ -18,7 +18,7 @@
         />
         <label
           [for]="ratingId + '-star1'"
-          class="cursor-pointer text-gray-400 transition-colors duration-100 text-3xl"
+          class="cursor-pointer text-gray-400 transition-colors duration-100 text-2xl"
           >&#9733;</label
         >
 
@@ -31,7 +31,7 @@
         />
         <label
           [for]="ratingId + '-star2'"
-          class="cursor-pointer text-gray-400 transition-colors duration-100 text-3xl"
+          class="cursor-pointer text-gray-400 transition-colors duration-100 text-2xl"
           >&#9733;</label
         >
 
@@ -44,7 +44,7 @@
         />
         <label
           [for]="ratingId + '-star3'"
-          class="cursor-pointer text-gray-400 transition-colors duration-100 text-3xl"
+          class="cursor-pointer text-gray-400 transition-colors duration-100 text-2xl"
           >&#9733;</label
         >
 
@@ -57,7 +57,7 @@
         />
         <label
           [for]="ratingId + '-star4'"
-          class="cursor-pointer text-gray-400 transition-colors duration-100 text-3xl"
+          class="cursor-pointer text-gray-400 transition-colors duration-100 text-2xl"
           >&#9733;</label
         >
 
@@ -70,7 +70,7 @@
         />
         <label
           [for]="ratingId + '-star5'"
-          class="cursor-pointer text-gray-400 transition-colors duration-100 text-3xl"
+          class="cursor-pointer text-gray-400 transition-colors duration-100 text-2xl"
           >&#9733;</label
         >
       </div>
