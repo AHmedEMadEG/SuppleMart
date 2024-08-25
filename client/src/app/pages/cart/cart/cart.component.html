@@ -2,103 +2,9 @@
 <div class="h-1 font-bold my-10 text-4xl w-5/6 container mx-auto">cart</div>
 <div class="container mx-auto w-5/6">
   <div class="flex">
-    <div class="overflow-x-auto w-2/3 me-16">
-      <table class="table">
-        <thead>
-          <tr class="uppercase border-b border-gray-300">
-            <th></th>
-            <th></th>
-            <th>product</th>
-            <th>price</th>
-            <th>quantity</th>
-            <th>subtotal</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="font-bold border-b border-gray-300">
-            <th>
-              <i
-                class="far fa-times-circle text-gray-400 hover:text-yellow-500 cursor-pointer"
-              ></i>
-            </th>
-            <td><img src="15-800x747.png" class="w-24" /></td>
-            <td>
-              <a href="#" class="capitalize text-lg hover:text-yellow-500">
-                incredible rubber coat
-              </a>
-              <p class="text-gray-400">Available on backorder</p>
-            </td>
-            <td>£174.66</td>
-            <td>
-              <label>
-                <input
-                  type="number"
-                  min="0"
-                  max="10"
-                  value="1"
-                  class="w-12 h-10 text-center p-2 text-md focus:border-yellow-500 focus:outline-none focus:ring-1 focus:ring-yellow-500 transition duration-500"
-                />
-              </label>
-            </td>
-            <td>£174.66</td>
-          </tr>
-          <tr class="font-bold border-b border-gray-300">
-            <th>
-              <i
-                class="far fa-times-circle text-gray-400 hover:text-yellow-500 cursor-pointer"
-              ></i>
-            </th>
-            <td><img src="6-400x373.png" class="w-24" /></td>
-            <td>
-              <a href="#" class="capitalize text-lg hover:text-yellow-500">
-                incredible rubber coat
-              </a>
-              <p class="text-gray-400">Available on backorder</p>
-            </td>
-            <td>£174.66</td>
-            <td>
-              <label>
-                <input
-                  type="number"
-                  min="0"
-                  max="10"
-                  value="1"
-                  class="w-12 h-10 text-center p-2 text-md focus:border-yellow-500 focus:outline-none focus:ring-1 focus:ring-yellow-500 transition duration-500"
-                />
-              </label>
-            </td>
-            <td>£174.66</td>
-          </tr>
-          <tr class="font-bold">
-            <th>
-              <a href="#">
-                <i
-                  class="far fa-times-circle text-gray-400 hover:text-yellow-500 cursor-pointer"
-                ></i>
-              </a>
-            </th>
-            <td><img src="4-400x373.png" class="w-24" /></td>
-            <td>
-              <a href="#" class="capitalize text-lg hover:text-yellow-500">
-                incredible rubber coat
-              </a>
-              <p class="text-gray-400">Available on backorder</p>
-            </td>
-            <td>£174.66</td>
-            <td>
-              <label>
-                <input
-                  type="number"
-                  min="0"
-                  max="10"
-                  value="1"
-                  class="w-12 h-10 text-center p-2 text-md focus:border-yellow-500 focus:outline-none focus:ring-1 focus:ring-yellow-500 transition duration-500"
-                />
-              </label>
-            </td>
-            <td>£174.66</td>
-          </tr>
-        </tbody>
+    <div class="w-2/3 me-16">
+      <table class="table w-full">
+        <app-cart-product></app-cart-product>
       </table>
     </div>
     <div className="card bg-base-100 ">
@@ -139,7 +45,7 @@
       </div>
     </div>
   </div>
-  <div class="flex w-full justify-center ms-28 mb-10 ">
+  <div class="flex w-full justify-center ms-28 mb-10">
     <a href="#">
       <button
         class="text-black uppercase font-extrabold text-xs h-14 rounded-none bg-[#f2cb1f] py-5 px-8 hover:bg-[#C7A21E] hover:text-white"
