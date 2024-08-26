@@ -1,11 +1,41 @@
+<!-- parent component -->
 <app-navbar></app-navbar>
 <div class="h-1 font-bold my-10 text-4xl w-5/6 container mx-auto">cart</div>
 <div class="container mx-auto w-5/6">
   <div class="flex">
-    <div class="w-2/3 me-16">
-      <table class="table w-full">
-        <app-cart-product></app-cart-product>
-      </table>
+    <div class="w-2/3 me-16 overflow-x-auto">
+      <div
+        class="uppercase flex w-full justify-between font-extrabold text-xs mt-5 border-b pb-5"
+      >
+        <p class="ms-44">product</p>
+        <p class="ms-12">price</p>
+        <p>quantity</p>
+        <p>subtotal</p>
+      </div>
+      <app-cart-product
+        [imgProductCart]="'15-800x747.png'"
+        [nameProductCart]="'incredible rubber coat'"
+        [available]="'Available on backorder'"
+        [priceProductCart]="174.66"
+        class="flex items-center font-bold py-5 border-b"
+      >
+      </app-cart-product>
+      <app-cart-product
+        [imgProductCart]="'15-800x747.png'"
+        [nameProductCart]="'incredible rubber coat'"
+        [available]="'Available on backorder'"
+        [priceProductCart]="174.66"
+        class="flex items-center font-bold py-5 border-b"
+      >
+      </app-cart-product>
+      <app-cart-product
+        [imgProductCart]="'15-800x747.png'"
+        [nameProductCart]="'incredible rubber coat'"
+        [available]="'Available on backorder'"
+        [priceProductCart]="174.66"
+        class="flex items-center font-bold py-5 border-b"
+      >
+      </app-cart-product>
     </div>
     <div className="card bg-base-100 ">
       <div class="border-gray border-8 px-8 py-2">
@@ -56,3 +86,22 @@
   </div>
 </div>
 <app-footer></app-footer>
+
+<!-- <table class="table">
+    <thead>
+      <tr class="uppercase border-b border-gray-300">
+        <th></th>
+        <th></th>
+        <th>product</th>
+        <th>price</th>
+        <th>quantity</th>
+        <th>subtotal</th>sds
+      </tr>
+    </thead>
+    <app-cart-product
+      [imgProductCart]="'15-800x747.png'"
+      [nameProductCart]="'incredible rubber coat'"
+      [available]="'Available on backorder'"
+      [priceProductCart]="174.66"
+    ></app-cart-product>
+  </table> -->
