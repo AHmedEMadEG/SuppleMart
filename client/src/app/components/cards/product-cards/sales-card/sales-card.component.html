@@ -1,14 +1,26 @@
 <!-- app-sales-card.component.html -->
 <div class="bg-white h-32 flex justify-start items-center py-5">
   <div class="w-32 h-40 p-1 flex items-center">
-    <img src="{{ imgProduct }}" />
+    <img src="{{ product.thumbnail }}" />
   </div>
   <div>
-    <p class="font-bold">{{ nameProduct }}</p>
+    <p class="font-bold">{{ product.title }}</p>
     <div class="flex">
-      <img class="my-2" src="./icons/star-filled.png" alt="star" width="15px" height="15px" />
-      <img class="my-2" src="./icons/star-outlined.png" alt="star" width="15px" height="15px" />
+      <img
+        class="my-2"
+        src="./icons/star-filled.png"
+        alt="star"
+        width="15px"
+        height="15px"
+      />
+      <img
+        class="my-2"
+        src="./icons/star-outlined.png"
+        alt="star"
+        width="15px"
+        height="15px"
+      />
     </div>
-    <span class="font-bold text-lg"> £{{ priceProduct }} </span>
+    <span class="font-bold text-lg"> £{{ product.price }} </span>
   </div>
 </div>

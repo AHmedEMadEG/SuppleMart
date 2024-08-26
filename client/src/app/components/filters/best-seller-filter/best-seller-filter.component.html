@@ -1,0 +1,23 @@
+<div class="polygon bg-white w-72 mb-8">
+  <span
+    class="font-bold text-lg border-l-[3px] border-b-[1px] border-x-[--primary-color] py-4 px-7 block"
+    >Best Seller</span
+  >
+  <ul class="space-y-2 py-6 px-7">
+    @for(product of products; track product._id){
+    <li class="flex justify-between">
+      <app-sales-card [product]="product"></app-sales-card>
+    </li>
+    } @empty{ @for(index of [1,2,3]; track index){
+    <div class="flex w-52 flex-col gap-4">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="skeleton h-12 w-12 shrink-0"></div>
+        <div class="flex flex-col gap-4">
+          <div class="skeleton h-4 w-28"></div>
+          <div class="skeleton h-4 w-20"></div>
+        </div>
+      </div>
+    </div>
+    } }
+  </ul>
+</div>

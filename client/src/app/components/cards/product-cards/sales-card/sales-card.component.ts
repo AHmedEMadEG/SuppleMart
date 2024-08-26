@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Product } from '../../../../interfaces/product';
 
 @Component({
   selector: 'app-sales-card',
@@ -9,11 +9,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './sales-card.component.css',
 })
 export class SalesCardComponent {
-  @Input() imgProduct: string = '';
-  @Input() nameProduct: string = '';
-  @Input() priceProduct: number = 0;
-  @Input() ratingId: string = '';
-
-
-
+  @Input() product!: Product;
 }

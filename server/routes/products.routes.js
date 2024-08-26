@@ -7,6 +7,7 @@ const {
   getLatestDealProduct,
   getHomeRecommendedProducts,
   getPaginatedProducts,
+  addCategory,
 } = require("../controllers/products.controllers");
 const upload = require("../utils/multerConfig");
 
@@ -24,6 +25,8 @@ router.post(
 router.get("/", getHomeProducts);
 
 router.get("/categories", getCategories);
+
+router.post("/category", addCategory);
 
 router.get("/bestSelling", getBestSellingProducts);
 

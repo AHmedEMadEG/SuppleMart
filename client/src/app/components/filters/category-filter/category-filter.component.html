@@ -1,0 +1,38 @@
+<div class="polygon bg-white w-72 mb-8">
+  <span
+    class="font-bold text-lg border-l-[3px] border-b-[1px] border-x-[--primary-color] py-4 px-7 block"
+    >Categories</span
+  >
+  <ul class="space-y-2 py-6 px-7">
+    @for(category of categories; track category.category){
+    <li class="flex justify-between">
+      <a href="#" class="flex items-center hover:underline"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16"
+          fill="currentColor"
+          class="size-4 bg-[--primary-color]"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+        <span class="ml-3">{{ category.category }}</span></a
+      >
+      <span class="text-[--secondary-text]">{{ category.count }}</span>
+    </li>
+    } @empty{
+    <div class="flex w-52 flex-col gap-6">
+      <div class="skeleton h-4 w-50"></div>
+      <div class="skeleton h-4 w-50"></div>
+      <div class="skeleton h-4 w-50"></div>
+      <div class="skeleton h-4 w-50"></div>
+      <div class="skeleton h-4 w-50"></div>
+      <div class="skeleton h-4 w-50"></div>
+      <div class="skeleton h-4 w-50"></div>
+    </div>
+    }
+  </ul>
+</div>
