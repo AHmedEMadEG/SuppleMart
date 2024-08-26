@@ -6,6 +6,9 @@ module.exports = {
       backgroundImage: {
         hero: "url('/h1_banner-4.jpg')",
       },
+      screens: {
+        "custom-lg": "1200px",
+      },
     },
   },
   plugins: [require("daisyui")],

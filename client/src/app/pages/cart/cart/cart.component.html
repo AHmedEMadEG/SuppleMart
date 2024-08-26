@@ -1,23 +1,27 @@
 <!-- parent component -->
 <app-navbar></app-navbar>
 <div class="h-1 font-bold my-10 text-4xl w-5/6 container mx-auto">cart</div>
-<div class="container mx-auto w-5/6">
-  <div class="flex">
-    <div class="w-2/3 me-16 overflow-x-auto">
+<div class="container mx-auto w-full md:w-5/6">
+  <div
+    class="flex flex-wrap 2xl:flex-nowrap xl:flex-nowrap lg:flex-nowrap md:flex-wrap sm:flex-wrap justify-center gap-6"
+  >
+    <div class="w-full me-16 overflow-x-auto md:w-2/3">
       <div
         class="uppercase flex w-full justify-between font-extrabold text-xs mt-5 border-b pb-5"
       >
-        <p class="ms-44">product</p>
-        <p class="ms-12">price</p>
-        <p>quantity</p>
-        <p>subtotal</p>
+        <p class="w-[2%] p-5"></p>
+        <p class="w-3/12 md:w-2/12"></p>
+        <p class="w-3/12">product</p>
+        <p class="w-2/12">price</p>
+        <p class="w-2/12">quantity</p>
+        <p class="w-2/12">subtotal</p>
       </div>
       <app-cart-product
         [imgProductCart]="'15-800x747.png'"
         [nameProductCart]="'incredible rubber coat'"
         [available]="'Available on backorder'"
         [priceProductCart]="174.66"
-        class="flex items-center font-bold py-5 border-b"
+        class="flex items-center justify-between font-bold py-5 border-b"
       >
       </app-cart-product>
       <app-cart-product
@@ -25,7 +29,7 @@
         [nameProductCart]="'incredible rubber coat'"
         [available]="'Available on backorder'"
         [priceProductCart]="174.66"
-        class="flex items-center font-bold py-5 border-b"
+        class="flex items-center justify-between font-bold py-5 border-b"
       >
       </app-cart-product>
       <app-cart-product
@@ -33,7 +37,7 @@
         [nameProductCart]="'incredible rubber coat'"
         [available]="'Available on backorder'"
         [priceProductCart]="174.66"
-        class="flex items-center font-bold py-5 border-b"
+        class="flex items-center justify-between font-bold py-5 border-b"
       >
       </app-cart-product>
     </div>
@@ -75,14 +79,14 @@
       </div>
     </div>
   </div>
-  <div class="flex w-full justify-center ms-28 mb-10">
-    <a href="#">
+  <div class="flex w-full justify-center mb-10">
+    <a href="#" class="w-full md:w-auto">
       <button
-        class="text-black uppercase font-extrabold text-xs h-14 rounded-none bg-[#f2cb1f] py-5 px-8 hover:bg-[#C7A21E] hover:text-white"
+        class="text-black uppercase font-extrabold text-xs h-14 rounded-none bg-[#f2cb1f] py-5 px-8 mt-5 hover:bg-[#C7A21E] hover:text-white w-full"
       >
         update cart
-      </button></a
-    >
+      </button>
+    </a>
   </div>
 </div>
 <app-footer></app-footer>
