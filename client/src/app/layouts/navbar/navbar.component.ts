@@ -18,6 +18,7 @@ import {
   addLoggedInUserToLocalStorage,
   addTokenToLocalStorage,
   deleteLoggedInUserFromLocalStorage,
+  deleteTokenFromLocalStorage,
   emptyCartProductsFromLocalStorage,
 } from '../../utils/local-storage';
 
@@ -140,6 +141,7 @@ export class NavbarComponent {
     this.loggedInUserService.deleteLoggedInUser();
     this.cartProductsService.emptyCart();
     deleteLoggedInUserFromLocalStorage();
+    deleteTokenFromLocalStorage();
     emptyCartProductsFromLocalStorage();
     this.isSuccessfullyLoggedOut = true;
     setTimeout(() => (this.isSuccessfullyLoggedOut = false), 3000);

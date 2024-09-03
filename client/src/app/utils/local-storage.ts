@@ -1,16 +1,20 @@
 import { CartProduct } from '../interfaces/cart-product';
 import { User } from '../interfaces/user';
 
-export const addLoggedInUserToLocalStorage = (user: User) => {
-  localStorage.setItem('loggedInUser', JSON.stringify(user));
-};
-
 export const addTokenToLocalStorage = (token: string) => {
   localStorage.setItem('token', JSON.stringify(token));
 };
 
 export const getTokenFromLocalStorage = (): string =>
   JSON.parse(localStorage.getItem('token') || '');
+
+export const deleteTokenFromLocalStorage = () => {
+  localStorage.removeItem('token');
+};
+
+export const addLoggedInUserToLocalStorage = (user: User) => {
+  localStorage.setItem('loggedInUser', JSON.stringify(user));
+};
 
 export const deleteLoggedInUserFromLocalStorage = () => {
   localStorage.removeItem('loggedInUser');
