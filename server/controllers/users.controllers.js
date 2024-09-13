@@ -58,7 +58,7 @@ const mergeNonLoggedInUserCart = async (userId, cartItems) => {
   return await user.save();
 };
 
-exports.login = async (req, res) => {
+exports.login = async (req, res, next) => {
   try {
     const { email, password, cart } = req.body;
 
@@ -76,7 +76,7 @@ exports.login = async (req, res) => {
         }
       );
 
-      if (cart.length) {
+      if (cart?.length) {
         user = await mergeNonLoggedInUserCart(user._id, req.body.cart);
       }
 
