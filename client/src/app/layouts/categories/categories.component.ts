@@ -18,15 +18,13 @@ export class CategoriesComponent {
   constructor(private categoryRequestsService: CategoryRequestsService) {}
 
   ngOnInit() {
-    setTimeout(() => {
-      this.subscription = this.categoryRequestsService
-        .getCategories()
-        .subscribe((cats) => {
-          this.categories = cats;
-          this.categories.splice(5, 1);
-          this.categories.splice(0, 1);
-        });
-    }, 500);
+    this.subscription = this.categoryRequestsService
+      .getCategories()
+      .subscribe((cats) => {
+        this.categories = cats;
+        this.categories.splice(5, 1);
+        this.categories.splice(0, 1);
+      });
   }
 
   ngOnDestroy() {

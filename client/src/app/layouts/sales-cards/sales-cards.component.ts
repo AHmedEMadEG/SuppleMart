@@ -20,13 +20,11 @@ export class SalesCardsComponent {
   constructor(private bestSellerRequestsService: BestSellerRequestsService) {}
 
   ngOnInit() {
-    setTimeout(() => {
-      this.subscription = this.bestSellerRequestsService
-        .getProducts()
-        .subscribe((products) => {
-          this.products = products;
-        });
-    }, 500);
+    this.subscription = this.bestSellerRequestsService
+      .getProducts()
+      .subscribe((products) => {
+        this.products = products;
+      });
   }
 
   ngOnDestroy() {

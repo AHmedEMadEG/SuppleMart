@@ -18,14 +18,12 @@ export class BestSellerFilterComponent {
   constructor(private bestSellerRequestsService: BestSellerRequestsService) {}
 
   ngOnInit() {
-    setTimeout(() => {
-      this.subscription = this.bestSellerRequestsService
-        .getProducts()
-        .subscribe((products) => {
-          this.products = products;
-          this.products = products.slice(0, 3);
-        });
-    }, 500);
+    this.subscription = this.bestSellerRequestsService
+      .getProducts()
+      .subscribe((products) => {
+        this.products = products;
+        this.products = products.slice(0, 3);
+      });
   }
 
   ngOnDestroy() {

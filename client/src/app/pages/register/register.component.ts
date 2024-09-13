@@ -97,7 +97,8 @@ export class RegisterComponent {
       !this.name?.errors &&
       !this.email?.errors &&
       !this.password?.errors &&
-      !this.re_password?.errors
+      !this.re_password?.errors &&
+      !this.noMatch
     ) {
       const name = this.name?.value;
       const email = this.email?.value;
@@ -106,14 +107,16 @@ export class RegisterComponent {
       this.authenticationRequestsService
         .register(user)
         .pipe(
-          tap((msg) => {
-            if (msg?.success) {
+          tap((res) => {
+            if (res?.success) {
               this.router.navigate(['/']);
+            }else if(res?.error){
+              this.errorMessage = res.error;
             }
           }),
           catchError((error) => {
             this.errorMessage =
-              error?.error?.error ||
+            error?.error || error?.error?.error ||
               'An error occurred while registering, please try again';
             return of(null);
           })

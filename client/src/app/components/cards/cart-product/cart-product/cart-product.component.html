@@ -20,7 +20,7 @@
 </div>
 <div class="w-3/12">
   <a
-    routerLink="/product-details"
+    [routerLink]="['/product-details', cartProduct.productId]"
     class="capitalize text-base hover:text-[var(--primary-color)]"
   >
     {{ cartProduct.title }}

@@ -25,11 +25,11 @@ export class CartProductComponent {
   constructor(private cartProductsService: CartProductsService){}
 
   handleDelete(){
-    this.deleteEvent.emit({productId:this.cartProduct._id});
+    this.deleteEvent.emit({productId:this.cartProduct.productId});
   }
 
   handleUpdate(){
-    this.updateEvent.emit({productId:this.cartProduct._id, newQuantity:5});
+    this.updateEvent.emit({productId:this.cartProduct.productId, newQuantity:5});
   }
 
   quantityChanged(){

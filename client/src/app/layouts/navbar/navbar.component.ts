@@ -20,6 +20,7 @@ import {
   deleteLoggedInUserFromLocalStorage,
   deleteTokenFromLocalStorage,
   emptyCartProductsFromLocalStorage,
+  initializeCartProductsInLocalStorage,
 } from '../../utils/local-storage';
 
 @Component({
@@ -60,6 +61,7 @@ export class NavbarComponent {
 
   loginForm!: FormGroup;
   submitted: boolean = false;
+  loading: boolean = false;
   errorMessage!: string;
   loggedInUser: User | null = null;
   loggedInUserSubscription!: Subscription;
@@ -107,6 +109,7 @@ export class NavbarComponent {
 
   handleLogin() {
     this.submitted = true;
+    this.loading = true;
     if (this.loginForm.valid) {
       const credentials = this.loginForm.value;
       this.authenticationRequestsService
@@ -114,19 +117,25 @@ export class NavbarComponent {
         // pipe is used because subscribe(success, error) is depricated
         .pipe(
           tap((res) => {
+            this.loading = false;
             if (res?.success) {
+              this.errorMessage = '';
               this.loggedInUserService.setLoggedInUser(res.user);
               addLoggedInUserToLocalStorage(res.user);
               addTokenToLocalStorage(res.token);
               this.cartProductsService.initializeCartProducts(res.user.cart);
+              initializeCartProductsInLocalStorage(res.user.cart);
               this.isSuccessfullyLoggedIn = true;
               setTimeout(() => (this.isSuccessfullyLoggedIn = false), 3000);
               if (res.user.role === 'admin') {
                 this.router.navigate(['/admin/dashboard']);
               }
+            } else if (res?.error) {
+              this.errorMessage = res.error;
             }
           }),
           catchError((error) => {
+            this.loading = false;
             this.errorMessage =
               error?.error?.error ||
               'An error occurred while logging in, please try again';

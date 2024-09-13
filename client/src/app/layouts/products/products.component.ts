@@ -19,13 +19,11 @@ export class ProductsComponent {
   constructor(private productRequestsService: ProductRequestsService) {}
 
   ngOnInit() {
-    setTimeout(() => {
-      this.subscription = this.productRequestsService
-        .getProducts()
-        .subscribe((prods) => {
-          this.products = prods;
-        });
-    }, 500);
+    this.subscription = this.productRequestsService
+      .getProducts()
+      .subscribe((prods) => {
+        this.products = prods;
+      });
   }
 
   ngOnDestroy() {

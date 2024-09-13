@@ -22,16 +22,13 @@ export class CategoryFilterComponent {
     private router: Router
   ) {}
 
-
   ngOnInit() {
-    setTimeout(() => {
-      this.subscription = this.categoryRequestsService
-        .getCategories()
-        .subscribe((cats) => {
-          this.categories = cats;
-          this.categories.splice(0, 1);
-        });
-    }, 500);
+    this.subscription = this.categoryRequestsService
+      .getCategories()
+      .subscribe((cats) => {
+        this.categories = cats;
+        this.categories.splice(0, 1);
+      });
   }
 
   handleCategorySelect(category: string) {

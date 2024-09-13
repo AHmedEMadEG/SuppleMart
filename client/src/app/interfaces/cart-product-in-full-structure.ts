@@ -1,5 +1,5 @@
 export interface CartProductInFullStructure {
-    _id: string;
+  productId: string;
   title: string;
   price: number;
   thumbnail: string;

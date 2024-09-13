@@ -21,7 +21,7 @@ import { deleteOneCartProductFromLocalStorage } from '../../utils/local-storage'
   styleUrl: './cart.component.css',
 })
 export class CartComponent {
-  cartProducts!: CartProduct[];
+  cartProducts: CartProduct[] = [];
   cartProductsInFullStructure!: CartProductInFullStructure[];
   isCartProductQuantityChanged: boolean = false;
 
@@ -35,17 +35,17 @@ export class CartComponent {
 
   ngOnInit() {
     this.cartProductsService.getCartProducts().subscribe((cartProds) => {
-      this.cartProducts = cartProds;
-      if (cartProds.length) {
-        console.log(cartProds)
-        console.log(this.cartProducts)
+      console.log(cartProds);
+      console.log(this.cartProducts);
+      if (cartProds.length !== this.cartProducts.length) {
+        this.cartProducts = cartProds;
         const ids = this.cartProducts.map((cartProd) => {
-          console.log(cartProd.productId)
-          return  cartProd.productId
+          return cartProd.productId;
         });
         this.cartService.getProductsByIds(ids).subscribe((res) => {
           this.cartProductsInFullStructure = res.products.map(
             (prod, index) => ({
+              productId: prod._id,
               ...prod,
               quantity: this.cartProducts[index].quantity,
             })
@@ -58,11 +58,15 @@ export class CartComponent {
   handleDelete(productId: string) {
     this.cartProductsService.deleteCartProduct(productId);
     this.cartProductsInFullStructure = this.cartProductsInFullStructure.filter(
-      (prod) => prod._id !== productId
+      (prod) => prod.productId !== productId
     );
 
     deleteOneCartProductFromLocalStorage(productId);
-    // if loggedin => send req to the api to delete prod from db
+
+    const user = JSON.parse(localStorage.getItem('loggedInUser') || '');
+    if (user) {
+      this.cartService.deleteCartProductFromDB(productId);
+    }
   }
 
   // to enable and disable the update cart button
@@ -72,11 +76,11 @@ export class CartComponent {
 
   handleUpdateCart() {
     const updatedCartProducts = this.cartProductComponents.map((component) => ({
-      productId: component.cartProduct._id,
+      productId: component.cartProduct.productId,
       quantity: component.cartProduct.quantity,
     }));
 
-    updatedCartProducts.forEach((prod) => { //problem, observable is updated several times, req is sent more than once 
+    updatedCartProducts.forEach((prod) => {
       this.cartProductsService.updateCartProductQuantity(
         prod.productId,
         prod.quantity

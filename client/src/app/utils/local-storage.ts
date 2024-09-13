@@ -20,6 +20,11 @@ export const deleteLoggedInUserFromLocalStorage = () => {
   localStorage.removeItem('loggedInUser');
 };
 
+
+export const initializeCartProductsInLocalStorage = (cartProducts: CartProduct[]) => {
+  localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
+}
+
 export const addOneCartProductToLocalStorage = (cartProduct: CartProduct) => {
   let storedCartProducts = JSON.parse(
     localStorage.getItem('cartProducts') || '[]'
@@ -71,7 +76,6 @@ export const deleteOneCartProductFromLocalStorage = (productId: string) => {
   else {
     throw new Error('no cart products to be deleted from local storage!');
   }
-  console.log(storedCartProducts);
   localStorage.setItem('cartProducts', JSON.stringify(storedCartProducts));
 };
 
