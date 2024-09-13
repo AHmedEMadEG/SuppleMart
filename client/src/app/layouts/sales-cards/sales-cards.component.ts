@@ -4,11 +4,12 @@ import { SalesCardComponent } from '../../components/cards/product-cards/sales-c
 import { Subscription } from 'rxjs';
 import { Product } from '../../interfaces/product';
 import { BestSellerRequestsService } from '../../services/http-requests/best-seller-reaquests/best-seller-requests.service';
+import { SmallCardComponent } from '../../components/cards/product-cards/small-card/small-card.component';
 
 @Component({
   selector: 'app-sales-cards',
   standalone: true,
-  imports: [SalesCardComponent, BigCardComponent],
+  imports: [SalesCardComponent, BigCardComponent, SmallCardComponent],
   templateUrl: './sales-cards.component.html',
   styleUrl: './sales-cards.component.css',
 })

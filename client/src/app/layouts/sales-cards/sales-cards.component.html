@@ -6,6 +6,12 @@
       <p class="font-bold text-4xl mb-8">Best Selling</p>
       @for(product of products; track product._id){
       <app-sales-card [product]="product"></app-sales-card>
+      }@empty {
+      <app-small-card class="w-full p-3" [loading]="true"></app-small-card>
+      <app-small-card class="w-full p-3" [loading]="true"></app-small-card>
+      <app-small-card class="w-full p-3" [loading]="true"></app-small-card>
+      <app-small-card class="w-full p-3" [loading]="true"></app-small-card>
+      <app-small-card class="w-full p-3" [loading]="true"></app-small-card>
       }
     </div>
 
@@ -20,6 +26,12 @@
       <p class="font-bold text-4xl mb-8">Recommended</p>
       @for(product of products; track product._id){
       <app-sales-card [product]="product"></app-sales-card>
+      }@empty {
+      <app-small-card class="w-full p-3" [loading]="true"></app-small-card>
+      <app-small-card class="w-full p-3" [loading]="true"></app-small-card>
+      <app-small-card class="w-full p-3" [loading]="true"></app-small-card>
+      <app-small-card class="w-full p-3" [loading]="true"></app-small-card>
+      <app-small-card class="w-full p-3" [loading]="true"></app-small-card>
       }
     </div>
   </div>
