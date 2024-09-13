@@ -51,11 +51,9 @@ const setCart = async (req, res, next) => {
   try {
     const { cart } = req.body;
 
-    console.log(cart)
     const userId = req.user.id;
 
     const user = await User.findById(userId);
-    console.log(user)
 
     if (!user) {
       throw new CustomError("user not found", 404);
@@ -64,8 +62,6 @@ const setCart = async (req, res, next) => {
     user.cart = cart.map((prod) => ({ ...prod }));
 
     await user.save();
-    console.log(user)
-     
 
     res
       .status(201)
@@ -137,7 +133,7 @@ const getCartItems = async (req, res, next) => {
 const removeCartItem = async (req, res, next) => {
   try {
     const userId = req.user.id;
-    const { productId } = req.body;
+    const { productId } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(productId)) {
       throw new CustomError("Invalid product ID", 400);

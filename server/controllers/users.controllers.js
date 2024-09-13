@@ -45,17 +45,26 @@ const mergeNonLoggedInUserCart = async (userId, cartItems) => {
 
   const user = await User.findById(userId);
 
-  const userCartMap = new Map(user.cart.map((item) => [item.productId, item]));
+  if (!user) {
+    throw new CustomError("User not found", 404);
+  }
+
+  const userCartMap = new Map(
+    user.cart.map((item) => [item.productId.toString(), item])
+  );
 
   for (let item of cartItems) {
-    if (userCartMap.has(item.productId)) {
-      userCartMap.get(item.productId).quantity += item.quantity;
+    const productIdString = item.productId.toString();
+    if (userCartMap.has(productIdString)) {
+      userCartMap.get(productIdString).quantity += item.quantity;
     } else {
       user.cart.push({ productId: item.productId, quantity: item.quantity });
     }
   }
 
-  return await user.save();
+  await user.save();
+
+  return user;
 };
 
 exports.login = async (req, res, next) => {
